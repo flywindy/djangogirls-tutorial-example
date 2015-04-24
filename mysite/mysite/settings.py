@@ -83,9 +83,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Static asset configuration
-STATIC_ROOT = 'staticfiles'
-
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
 )
