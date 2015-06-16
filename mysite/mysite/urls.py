@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+# import view functions from trips app
+from trips.views import hello_world, home, post_detail
 
 urlpatterns = patterns('',
     # Examples:
@@ -7,8 +9,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^hello/$', 'trips.views.hello_world'),
-    url(r'^$', 'trips.views.home'),
-    url(r'^post/(?P<id>\d+)/$', 'trips.views.post_detail',
-        name='post_detail'),
+    url(r'^hello/$', hello_world),
+    url(r'^$', home),
+    url(r'^post/(?P<id>\d+)/$', post_detail, name='post_detail'),
 )
